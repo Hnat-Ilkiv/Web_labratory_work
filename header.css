@@ -1,0 +1,90 @@
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.figure-logo-in-header {
+}
+
+.img-logo-in-header {
+}
+
+/*
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+}
+*/
+
+.link-home-page {
+    color: #202336;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-decoration: none;
+    margin: 15px 15px;
+}
+
+.link-destinations-page {
+    color: #B8BECD;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none;
+    margin: 15px 15px;
+}
+
+.link-about-page {
+    color: #B8BECD;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none;
+    margin: 15px 15px;
+}
+
+.link-partner-page {
+    color: #B8BECD;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none;
+    margin: 15px 15px;
+}
+
+.login-button-in-header {
+    background-color: #ffffff;
+    color: #fb8f1d;
+    border: 1px solid #FB8F1D;
+    padding: 8px 32px;
+    text-align: center;
+    border-radius: 8px;
+    font-family: Inter;
+    font-size: 15px;
+    margin: 15px 9px 15px 15px;
+}
+
+.register-button-in-header {
+    background-color: #fb8f1d;
+    color: #ffffff;
+    border: none;
+    text-align: center;
+    border-radius: 8px;
+    font-family: Inter;
+    font-size: 15px;
+    padding: 8px 32px;
+    margin: 15px 15px 15px 9px
+}

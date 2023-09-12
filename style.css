@@ -1,0 +1,9 @@
+@import "header.css";
+@import "section_explore-and-travel.css";
+@import "section_a-new-way-to-explore-the-world.css";
+@import "section_featured-destinations.css";
+@import "footer.css";
+
+body {
+    margin: 25px 5%;
+}
