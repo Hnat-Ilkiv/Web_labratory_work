@@ -11,13 +11,15 @@ header {
 .img-logo-in-header {
 }
 
-nav1 {
+/*
+nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     width: 50%;
 }
+*/
 
 .link-home-page {
     color: #202336;

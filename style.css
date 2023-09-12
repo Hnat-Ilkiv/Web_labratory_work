@@ -1,34 +1,6 @@
 @import "header.css";
-
+@import "section_explore-and-travel.css";
 
 body {
-    background-color: #ffffff;
+    margin: 25px 5%;
 }
-
-
-.section_1 {
-    display: flex;
-    flex-direction: row;
-}
-
-.text-blok-1 {
-    width: 50%;
-}
-
-#forms {
-    display: flex;
-    justify-content: space-between;
-}
-
-.figure_1 {
-    width: 50%;
-}
-
-.img1 {
-    width: 100%;
-}
-
-.section_2 {
-    background-color: #f8f8f8;
-}
-.logo

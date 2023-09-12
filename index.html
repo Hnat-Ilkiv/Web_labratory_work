@@ -22,41 +22,44 @@
             </nav>
         </header>
 
-        <section class="section_1" id="conteiner-1">
-            <aside class="text-blok-1">
-                <h1>Explore and Travel</h1>
-                <p>Holiday finder</p>
+        <section class="explore-and-travel-container">
+            <aside class="explore-and-travel-info">
+                <h1 class="explore-and-travel-title">Explore and<br>Travel</h1>
+                <p class="holiday-finder-menu">Holiday finder</p>
+                <hr class="small-hr">
 
-                <form id="forms">
-                    <select label="Loc">
-                        <option value="location">NewYork</option>
+                <form class="holiday-finder-form">
+                    <select label="Location" class="holiday-parameter-selector">
+                        <option value="location" selected>Location</option>
+                        <option value="kyiv">Kyiv</option>
+                        <option value="london">London</option>
+                        <option value="berlin">Berlin</option>
+                    </select>
+                    <select label="Activity" class="holiday-parameter-selector">
+                        <option value="activity" selected>Activity</option>
                         <option value="location">Saab</option>
                         <option value="location">Fiat</option>
                         <option value="location">Audi</option>
                     </select>
-                    <select label="Loc">
-                        <option value="location">NewYork</option>
+                    <select label="Grabe" class="holiday-parameter-selector">
+                        <option value="grabe" selected>Grade</option>
                         <option value="location">Saab</option>
                         <option value="location">Fiat</option>
                         <option value="location">Audi</option>
                     </select>
-                    <select label="Loc">
-                        <option value="location">NewYork</option>
-                        <option value="location">Saab</option>
-                        <option value="location">Fiat</option>
-                        <option value="location">Audi</option>
-                    </select>
-                    <select label="Loc">
-                        <option value="location">NewYork</option>
+                    <select label="Date" class="holiday-parameter-selector">
+                        <option value="date" selected>Date</option>
                         <option value="location">Saab</option>
                         <option value="location">Fiat</option>
                         <option value="location">Audi</option>
                     </select>
                 </form>
+
+                <input type="button" value="Explore" class="explore-button-in-explore-and-travel">
             </aside>
 
-            <figure class="figure_1">
-                <img src="image/thousand-01.png" class="img1">
+            <figure class="figure-explore-and-travel">
+                <img src="image/thousand-01.png" class="img-explore-and-travel">
             </figure>
         </section>
 
