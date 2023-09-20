@@ -21,6 +21,7 @@ header nav ul {
         justify-content: space-around;
         align-items: center;
     list-style-type: none;
+    padding: 0px;
 }
 
 header nav ul li {
@@ -49,6 +50,10 @@ header nav ul li a {
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
+    }
+
+    header nav {
+        display: none;
     }
 
     header nav ul {
