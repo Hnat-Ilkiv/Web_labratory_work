@@ -1,25 +1,7 @@
-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
+@import "global.css"; /* Global */
+@import "button.css"; /* Button */
+@import "header.css"; /* HEADER */
 
-.figure-logo-in-header {
-}
-
-.img-logo-in-header {
-}
-
-/*
-nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 50%;
-}
-*/
 
 .link-home-page {
     color: #202336;
