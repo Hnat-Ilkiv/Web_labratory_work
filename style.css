@@ -1,155 +1,8 @@
 @import "global.css"; /* Global */
 @import "button.css"; /* Button */
 @import "header.css"; /* HEADER */
+@import "explore-and-travel-container.css"; /* Explore and Travel container */
 
-
-.link-home-page {
-    color: #202336;
-    font-family: Inter;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    text-decoration: none;
-    margin: 15px 15px;
-}
-
-.link-destinations-page {
-    color: #B8BECD;
-    font-family: Inter;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    text-decoration: none;
-    margin: 15px 15px;
-}
-
-.link-about-page {
-    color: #B8BECD;
-    font-family: Inter;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    text-decoration: none;
-    margin: 15px 15px;
-}
-
-.link-partner-page {
-    color: #B8BECD;
-    font-family: Inter;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    text-decoration: none;
-    margin: 15px 15px;
-}
-
-.login-button-in-header {
-    background-color: #ffffff;
-    color: #fb8f1d;
-    border: 1px solid #FB8F1D;
-    padding: 8px 32px;
-    text-align: center;
-    border-radius: 8px;
-    font-family: Inter;
-    font-size: 15px;
-    margin: 15px 9px 15px 15px;
-}
-
-.register-button-in-header {
-    background-color: #fb8f1d;
-    color: #ffffff;
-    border: none;
-    text-align: center;
-    border-radius: 8px;
-    font-family: Inter;
-    font-size: 15px;
-    padding: 8px 32px;
-    margin: 15px 15px 15px 9px
-}
-.explore-and-travel-container {
-    display: flex;
-    flex-direction: row;
-    justify-content:space-around;
-    align-items: center;
-}
-
-.explore-and-travel-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
-
-.explore-and-travel-title {
-    color: #202336;
-    font-family: Playfair Display;
-    font-size: 64px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 80px; /* 125% */
-}
-
-.holiday-finder-menu {
-    color: #202336;
-    font-family: Inter;
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-}
-
-.holiday-finder-form {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.small-hr {
-    width: 32px;
-    height: 2px; 
-    border-radius: 4px;
-    background: #202336;
-    margin-left: 2px;
-}
-
-.holiday-parameter-selector {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    color: #4A4C53;
-    font-family: Inter;
-    font-size: 15px;
-    width: 160px;
-    height: 50px;
-    border-radius: 6px;
-    border: 0.8px solid #AFB0B9;
-    background-color: #ffffff;
-    margin: 5px 30px 25px 0px;
-}
-
-.explore-button-in-explore-and-travel {
-    background-color: #fb8f1d;
-    color: #ffffff;
-    border: none;
-    text-align: center;
-    border-radius: 8px;
-    font-family: Mulish;
-    font-size: 17px;
-    width: 150px;
-    height: 42px;
-
-}
-
-.figure-explore-and-travel {
-    width: 678px;
-}
-
-.img-explore-and-travel {
-    width: 687px;
-    height: 654px;
-}
 .a-new-way-title {
     color: #000000;
     font-family: Playfair Display;
@@ -180,6 +33,7 @@
     color: #000;
     font-family: Playfair Display;
     font-size: 36px;
+    animation: rainbow 16s infinite ease-in-out;
 }
 
 .featured-destinations-view-all {
@@ -265,6 +119,10 @@ footer {
     flex-direction: column;
     align-items: center;
     background-color: #f8f8f8;
+}
+
+footer article img {
+    animation: logo 2.5s infinite ease-in-out;
 }
 
 .footer-info {

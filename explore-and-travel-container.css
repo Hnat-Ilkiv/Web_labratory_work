@@ -1,0 +1,107 @@
+section {
+    display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    padding: 0 16px;
+}
+
+section aside {
+    display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    width: 50%;
+    height: auto;
+}
+
+section aside h1 {
+    color: #202336;
+    font-family: Playfair Display;
+    font-size: 64px;
+    margin: 32px 0px;
+    animation: rainbow 16s infinite ease-in-out;
+}
+
+@keyframes rainbow {
+    0% {color: tomato;}
+    14% {color: orange;}
+    28% {color: yellow;}
+    42% {color: mediumseagreen;}
+    56% {color: dodgerblue;}
+    70% {color: slateblue;}
+    84% {color: violet;}
+    100% {color: tomato;}
+}
+
+section aside h2 {
+    color: #000;
+    font-family: Playfair Display;
+    font-size: 36px;
+    animation: rainbow 16s infinite ease-in-out;
+}
+
+section aside h4 {
+    color: #202336;
+    font-family: Inter;
+    font-size: 22px;
+    margin: 8px 0px;
+}
+
+section aside hr {
+    width: 32px;
+    height: 2px;
+    border-radius: 4px;
+    background: #202336;
+    margin-left: 2px;
+}
+
+section aside p {
+    color: #7D7987;
+    font-family: Mulish;
+    font-size: 17px;
+} 
+
+section aside form {
+    display: flex;
+        flex-wrap: wrap;
+        gap: 25px;
+    margin: 20px 0px;
+}
+
+section aside form select {
+    height: 50px;
+    width: 160px;
+
+    color: #4A4C53;
+    font-family: Inter;
+    font-size: 15px;
+    text-align: center;
+
+    border-radius: 6px;
+    border: 1px solid #AFB0B9;
+    background-color: #FFF;
+}
+
+section img {
+    width: 50%;
+    height: auto;
+}
+
+@media (max-width: 800px) {
+    section {
+        display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+    }
+}
+
+@media (min-width: 1920px) {
+    section {
+        width: 1920px;
+        margin: 0px auto;
+    }
+    footer {
+        width: 1920px;
+        margin: 0px auto;
+}

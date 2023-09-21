@@ -12,6 +12,13 @@ header {
 
 header img {
     margin: 10px;
+    animation: logo 2.5s infinite ease-in-out;
+}
+
+@keyframes logo {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.2);}
+    100% {transform: scale(1);}
 }
 
 header nav ul {
@@ -41,6 +48,7 @@ header nav ul li a {
 
 .current-page {
     color: #202336;
+    animation: rainbow 32s infinite ease-in-out;
 }
 
 /* Width 800px */
