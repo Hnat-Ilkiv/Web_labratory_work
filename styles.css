@@ -60,3 +60,8 @@ li {
 .video_conteiner {
     width: 80%;
 }
+.preview_video {
+    background: pink;
+    width: auto;
+    height: 80px;
+}

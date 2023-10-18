@@ -6,14 +6,16 @@
 
         <!-- Styles CSS -->
         <link rel="stylesheet" href="./styles.css">
+        <!-- Script JS -->
+        <script type="module" src="./index.js"></script>
     </head>
 
     <body>
         <header class="header">
             <h1>My Video</h1>
             <div class="search_div">
-                <input type="text" name="" class="search_input" id="input_search_id">
-                <button class="search_button" id="search_button_id">Search</button>
+                <input type="text" name="" class="search_input" id="inputSearchId">
+                <button class="search_button" id="search_button_id" onclick="searchItems()">Search</button>
             </div>
         </header>
 
@@ -21,24 +23,16 @@
             <aside class="manager">
                 <h2>Manager part</h2>
                 <div class="sort_div">
-                    <button class="manager_button">Sort Video</button>
+                    <button class="manager_button" onclick="sortItems()">Sort Video</button>
                 </div>
                 <div class="count_div">
                     <button class="manager_button">Count used storage</button>
                 </div>
             </aside>
-            <article class="video_conteiner" id="items_container">
+            <article class="video_conteiner">
                 <h2>Video list</h2>
-                <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
+                <ul id="items_container"></ul>
             </article>
         </section>
-
-        <script type="module" src="./index.js"></script>
     </body>
 </html>
