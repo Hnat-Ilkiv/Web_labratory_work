@@ -44,7 +44,19 @@ function show_items(items_list) {
         <p>Time: ${~~(item.video_time_s / 60)} m ${item.video_time_s % 60} s<p>
         </li>
         `
-    ).join("") : ""
+    ).join("") : "";
+    
+    // if (items_list.length > 0) {
+    //     ITEMS_LIST.innerHTML = items_list.map((item) => 
+    //     `
+    //     <li>
+    //     <div class="preview_video"></div>
+    //     <h3>${item.title}</h3>
+    //     <p>Space: ${item.used_spase_mb} MB <p>
+    //     <p>Time: ${~~(item.video_time_s / 60)} m ${item.video_time_s % 60} s<p>
+    //     </li>
+    //     `).join("");
+    // }
 }
 
 function searchItems() {
@@ -53,4 +65,12 @@ function searchItems() {
       show_items(items_list.filter((item) => {
         return item.title.toLowerCase().includes(inputContainer);
       }));
+}
+
+function sortItems() {
+    console.log("sort items");
+}
+
+function countItemsSpase() {
+    consloe.log("count items spase");
 }
