@@ -6,9 +6,6 @@
 
         <!-- Styles CSS -->
         <link rel="stylesheet" href="./styles.css">
-        <!-- Script JS -->
-        <script type="module" src="./index.js"></script>
-        <!-- <script src="./index.js"></script> -->
     </head>
 
     <body>
@@ -28,6 +25,9 @@
                 </div>
                 <div class="count_div">
                     <button class="manager_button" onclick="countItemsSpase()">Count used storage</button>
+                    <div id="countDivResult">
+                        <p>Used storage: 0 MB</p>
+                    </div>
                 </div>
             </aside>
             <article class="video_conteiner">
@@ -35,5 +35,7 @@
                 <ul id="items_container"></ul>
             </article>
         </section>
+
+        <script src="./index.js"></script>
     </body>
 </html>
