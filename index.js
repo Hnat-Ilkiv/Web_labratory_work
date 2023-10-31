@@ -1,5 +1,6 @@
 const ITEMS_LIST = document.getElementById("items_container");
 const divResult = document.getElementById("countDivResult");
+const saveButton = document.getElementById("save_button");
 let sortFlag = false;
 
 let items_list = [
@@ -27,26 +28,6 @@ let items_list = [
         title: "Funny animals #2",
         used_spase_mb: 14,
         video_time_s: 382
-    },
-    {
-        title: "Funny animals #1",
-        used_spase_mb: 74,
-        video_time_s: 573
-    },
-    {
-        title: "Funny cat #3",
-        used_spase_mb: 74,
-        video_time_s: 573
-    },
-    {
-        title: "Funny cat #2",
-        used_spase_mb: 48,
-        video_time_s: 467
-    },
-    {
-        title: "Funny cat #1",
-        used_spase_mb: 24,
-        video_time_s: 98
     }
 ];
 
@@ -57,16 +38,77 @@ document.addEventListener("DOMContentLoaded", (event) => {
   
 function show_items(items_list) {
     ITEMS_LIST.innerHTML = 
-    (items_list.length > 0) ? items_list.map((item) => 
+    (items_list.length > 0) ? items_list.map(item =>
         `
         <li>
         <div class="preview_video"></div>
         <h3>${item.title}</h3>
-        <p>Space: ${item.used_spase_mb} MB <p>
-        <p>Time: ${~~(item.video_time_s / 60)} m ${item.video_time_s % 60} s<p>
+        <p>Space: ${item.used_spase_mb} MB </p>
+        <p>Time: ${~~(item.video_time_s / 60)} m ${item.video_time_s % 60} s</p>
+        <button onclick="editeItems('${item.title}')">Edite Video</button>
         </li>
         `
     ).join("") : "";
+}
+
+function createItems() {
+    const name = document.getElementById("video_name_create_input").value;
+    if(items_list.some(item => item.title == name)){
+        alert("An element with that name already exists.")
+    }
+    else if (name == "") {
+        alert("Name is missing.")
+    }
+    else {
+        const size = document.getElementById("used_spase_mb_create_input").value;
+        const time = document.getElementById("video_time_s_create_input").value;
+        const new_item = {
+            title: name,
+            used_spase_mb: size,
+            video_time_s: time
+        };
+
+        items_list.push(new_item);
+
+        document.getElementById('create_modal').style.display='none';
+        show_items(items_list);
+    }
+}
+
+function editeItems(item_name) {
+    let element = items_list.find(item => item.title == item_name);
+
+    saveButton.innerHTML = `<button class="manager_button" onclick="saveItems('${element.title}')">Save</button>`
+
+    document.getElementById('edite_modal').style.display='block';
+    document.getElementById('video_name_edite_input').value = element.title;
+    document.getElementById('used_spase_mb_edite_input').value = element.used_spase_mb;
+    document.getElementById('video_time_s_edite_input').value = element.video_time_s;
+}
+
+function saveItems(item_name){
+    const name = document.getElementById("video_name_edite_input").value;
+    const size = document.getElementById("used_spase_mb_edite_input").value;
+    const time = document.getElementById("video_time_s_edite_input").value;
+
+    let element = items_list.find(item => item.title == item_name);
+
+    element.title = null;
+    if(items_list.some(item => item.title == name)){
+        element.title = item_name;
+        alert("An element with that name already exists.")
+    }
+    else if (name == "") {
+        alert("Name is missing.")
+    }
+    else {
+        element.used_spase_mb = size;
+        element.video_time_s = time;
+
+        document.getElementById('edite_modal').style.display='none';
+        saveButton.innerHTML = ``;
+        show_items(items_list);
+    }
 }
 
 function searchItems() {
