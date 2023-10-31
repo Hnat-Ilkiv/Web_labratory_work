@@ -1,0 +1,151 @@
+@import "global.css"; /* Global */
+@import "button.css"; /* Button */
+@import "header.css"; /* HEADER */
+@import "explore-and-travel-container.css"; /* Explore and Travel container */
+
+.a-new-way-title {
+    color: #000000;
+    font-family: Playfair Display;
+    font-size: 36px;
+}
+
+.a-new-way-text {
+    color: #7D7987;
+    font-family: Mulish;
+    font-size: 17px;
+    margin: 0px 0px 30px 0px;
+}
+.featured-destinations-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.featured-destinations-title-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.featured-destinations-title {
+    color: #000;
+    font-family: Playfair Display;
+    font-size: 36px;
+    animation: rainbow 16s infinite ease-in-out;
+}
+
+.featured-destinations-view-all {
+    color: #FB8F1D;
+    font-family: Inter;
+    font-size: 17px;
+    text-decoration: none;
+    margin: 15px 30px;
+}
+
+.place_1 {
+    width: 250px;
+    height: 350px;
+    background-image: url("image/plays-1.png");
+    background-size: 220%;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    border-radius: 10px;
+    margin: 2px;
+}
+
+.place_2 {
+    width: 250px;
+    height: 350px;
+    background-image: url("image/plays-2.png");
+    background-size: 220%;
+    background-repeat: no-repeat;
+    background-position: center top;
+    border-radius: 10px;
+    margin: 2px;
+}
+
+.place_3 {
+    width: 250px;
+    height: 350px;
+    background-image: url("image/plays-3.png");
+    background-size: 220%;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    border-radius: 10px;
+    margin: 2px;
+}
+
+.place_4 {
+    width: 250px;
+    height: 350px;
+    background-image: url("image/plays-4.png");
+    background-size: 220%;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    border-radius: 10px;
+    margin: 2px;
+}
+
+.place-lable {
+    position: relative;
+    bottom: -285px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    padding: 8px 4px;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-p-lable {
+    color: #042521;
+    font-family: Inter;
+    font-size: 17px;
+    margin: 2px;
+}
+
+.sub-p-lable {
+    color: #80918E;
+    font-family: Inter;
+    font-size: 15px;
+    margin: 2px;
+}
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f8f8f8;
+}
+
+footer article img {
+    animation: logo 2.5s infinite ease-in-out;
+}
+
+.footer-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+}
+
+.footer-info-text {
+    color: #848484;
+    font-family: Mulish;
+    font-size: 17px;
+}
+
+.footer-hr {
+    width: 90%;
+    height: 0.6px;
+    background: #c4c4c4;
+    border: none;
+}
+
+.soshal-icon {
+    margin: 4px 8px;
+}

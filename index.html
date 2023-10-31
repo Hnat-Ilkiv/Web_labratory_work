@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <!-- HEAD -->
+    <head>
+        <meta charset="UTF-8"> 
+        <title>Web 1st lab</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="hamburger.js"></script>
+    </head>
+
+    <!-- BODY -->
+    <body>
+        <!-- HEADER -->
+        <header>
+            <!-- LOGO -->
+            <img src="image/logo.svg" class="img-logo" onclick="hamburger()">
+
+            <!-- NAVIGATION -->
+            <nav style="display:;">
+                <ul>
+                    <li><a class="current-page" href="">Home</a></li>
+                    <li><a href="">Destination</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Partner</a></li>
+                    <li><input class="white-button" type="button" value="Login"></li>
+                    <li><input class="orange-button" type="button" value="Register"></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- EXPLORE AND TRAVEL CONTAINER -->
+        <section>
+            <aside>
+                <h1>Explore and<br>Travel</h1>
+                <h4>Holiday finder</h4>
+                <hr>
+
+                <form>
+                    <select label="Location">
+                        <option value="location" selected>Location</option>
+                        <option value="kyiv">Kyiv</option>
+                        <option value="london">London</option>
+                        <option value="berlin">Berlin</option>
+                    </select>
+                    <select label="Activity">
+                        <option value="activity" selected>Activity</option>
+                        <option value="treawel">Treawel</option>
+                        <option value="sport">Sport</option>
+                        <option value="culture">Culture</option>
+                    </select>
+                    <select label="Grabe">
+                        <option value="grabe" selected>Grade</option>
+                        <option value="budgetary">Budgetary</option>
+                        <option value="average">Average</option>
+                        <option value="unlimited">Unlimited</option>
+                    </select>
+                    <select label="Date">
+                        <option value="date" selected>Date</option>
+                        <option value="nextweek">Next Week</option>
+                        <option value="nextmonth">Next Month</option>
+                        <option value="nextyear">Next Year</option>
+                    </select>
+                </form>
+
+                <input class="orange-button" type="button" value="Explore">
+            </aside>
+
+            <img src="image/thousand-01.png">
+        </section>
+
+        <!-- EXPLORE AND TRAVEL CONTAINER -->
+        <section style="background: #F8F8F8;">
+                <img src="image/thousand-02.png">
+
+            <aside class="explore-and-travel-info">
+                <h2>A new way to explore the world</h2>
+                <p>For decades travellers have reached for Lonely Planet books when looking to plan and execute their perfect trip, but now, they can also let Lonely Planet Experiences lead the way</p>
+                <input class="orange-button" type="button" value="Learn more">
+            </aside>
+        </section>
+
+        <!-- FEATURED DESTINATIONS CONTAINER -->
+        <section class="featured-destinations-container">
+            <article class="featured-destinations-title-bar">
+                <h1 class="featured-destinations-title">Featured destinations</h1>
+                <a href="" class="featured-destinations-view-all">View all ></a>
+            </article>
+
+            <article class="place_1">
+                <div class="place-lable">
+                    <p class="main-p-lable">Raja Ampat</p>
+                    <p class="sub-p-lable">Indonesia</p>
+                </div>
+            </article>
+
+            <article class="place_2">
+                <div class="place-lable">
+                    <p class="main-p-lable">Fanjingshan</p>
+                    <p class="sub-p-lable">China</p>
+                </div>
+            </article>
+
+            <article class="place_3">
+                <div class="place-lable">
+                    <p class="main-p-lable">Vevey</p>
+                    <p class="sub-p-lable">Switzerland</p>
+                </div>
+            </article>
+
+            <article class="place_4">
+                <div class="place-lable">
+                    <p class="main-p-lable">Skadar</p>
+                    <p class="sub-p-lable">Montenegro</p>
+                </div>
+            </article>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            <article class="footer-info">
+                <img src="image/logo_end.svg">
+                <p class="footer-info-text">©2020 Thousand Sunny. All rights reserved</p>
+            </article>
+
+            <hr class="footer-hr">
+
+            <figure>
+                <img src="image/frame-1.svg" class="soshal-icon">
+                <img src="image/frame-2.svg" class="soshal-icon">
+                <img src="image/frame-3.svg" class="soshal-icon">
+                <img src="image/frame-4.svg" class="soshal-icon">
+                <img src="image/frame-5.svg" class="soshal-icon">
+            </figure>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,37 @@
+/* White-Button */
+.white-button {
+    height: 32px;
+    width: 128px;
+
+    color: #FB8F1D;
+    font-family: Inter;
+    font-size: 15px;
+    background-color: #FFF;
+    border-radius: 8px;
+    border: 1px solid #FB8F1D; 
+
+    transition: background-color 0.3s;
+}
+
+.white-button:hover {
+    background-color: #F8F8F8;
+}
+
+/* Orange-Button */
+.orange-button {
+    height: 32px;
+    width: 128px;
+
+    color: #FFF;
+    font-family: Inter;
+    font-size: 15px;
+    background-color: #FB8F1D;
+    border-radius: 8px;
+    border: none;
+
+    transition: background-color 0.3s;
+}
+
+.orange-button:hover {
+    background-color: #F48B1C;
+}
