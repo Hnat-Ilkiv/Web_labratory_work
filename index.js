@@ -1,7 +1,6 @@
 const ITEMS_LIST = document.getElementById("items_container");
 const divResult = document.getElementById("countDivResult");
 const saveButton = document.getElementById("save_button");
-let sortFlag = false;
 
 let items_list = [
     {
@@ -60,8 +59,8 @@ function createItems() {
         alert("Name is missing.")
     }
     else {
-        const size = document.getElementById("used_spase_mb_create_input").value;
-        const time = document.getElementById("video_time_s_create_input").value;
+        const size = Number(document.getElementById("used_spase_mb_create_input").value);
+        const time = Number(document.getElementById("video_time_s_create_input").value);
         const new_item = {
             title: name,
             used_spase_mb: size,
@@ -99,11 +98,13 @@ function saveItems(item_name){
         alert("An element with that name already exists.")
     }
     else if (name == "") {
+        element.title = item_name;
         alert("Name is missing.")
     }
     else {
-        element.used_spase_mb = size;
-        element.video_time_s = time;
+        element.title = name;
+        element.used_spase_mb = Number(size);
+        element.video_time_s = Number(time);
 
         document.getElementById('edite_modal').style.display='none';
         saveButton.innerHTML = ``;
@@ -122,27 +123,19 @@ function searchItems() {
 
 function sortItems() {
     console.log("sort items");
-    
-    if (sortFlag) {
-        sortFlag = false;
-        show_items(items_list);
-    }
-    else {
-        sortFlag = true;
-        show_items(items_list.slice().sort((a, b) => {
-            const titleA = a.title.toUpperCase();
-            const titleB = b.title.toUpperCase();
+    show_items(items_list.slice().sort((a, b) => {
+        const titleA = a.title.toUpperCase();
+        const titleB = b.title.toUpperCase();
 
-            if (titleA < titleB) {
-                return -1;
-            }
-            if (titleA > titleB) {
-                return 1;
-            }
+        if (titleA < titleB) {
+            return -1;
+        }
+        if (titleA > titleB) {
+            return 1;
+        }
 
-            return 0;
-        }));
-    }
+        return 0;
+    }));
 }
 
 function countItemsSpase() {
