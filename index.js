@@ -126,16 +126,18 @@ function countItemsSpase() {
     `;
 }
 
-// Приклад запиту GET
+// Виконуємо GET-запит
 fetch('http://localhost:3000/items')
   .then(response => response.json())
   .then(data => {
-    // Обробка отриманих даних
-    console.log(data);
+    // Зберігаємо отримані дані у змінну items_list
+    items_list = data;
+    // Виконуємо додаткову обробку, якщо необхідно
+    console.log("Отримані дані:", items_list);
   })
   .catch(error => {
     // Обробка помилок
-    console.error('Error:', error);
+    console.error('Помилка:', error);
   });
 
 // Приклад запиту POST

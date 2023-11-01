@@ -39,7 +39,34 @@ app.post('/items', (req, res) => {
   res.json({ message: 'Item created successfully', item: newItem });
 });
 
-// Додай інші маршрути для оновлення та видалення елементів за необхідності
+// Обробник PUT-запиту для оновлення елемента за його ідентифікатором
+app.put('/items/:id', (req, res) => {
+  const itemId = req.params.id;
+  const updatedItem = req.body;
+
+  // Логіка оновлення елемента в твоїй базі даних
+  // Наприклад:
+  for (let i = 0; i < items_list.length; i++) {
+    if (items_list[i].id === itemId) {
+      items_list[i] = updatedItem;
+      break;
+    }
+  }
+
+  res.json({ message: 'Item updated successfully' });
+});
+
+// Обробник DELETE-запиту для видалення елемента за його ідентифікатором
+app.delete('/items/:id', (req, res) => {
+  const itemId = req.params.id;
+
+  // Логіка видалення елемента з твоєї бази даних
+  // Наприклад:
+  items_list = items_list.filter(item => item.id !== itemId);
+
+  res.json({ message: 'Item deleted successfully' });
+});
+
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
