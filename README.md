@@ -1,22 +1,14 @@
-# 4. CRUD Javascript App: Create/Edit Pages
-**Description:** In this work, you need to continue working and add two new
-parts to your website - **Create & Edit Pages** (You can find the template of
-these pages by following the link)
+## JavaScript CRUD program: backend
 
-Update/Delete operations are not required for this work!
+**Description:** In the last part of the work on the site, you must
+implement all the ``create/read/update/delete'' operations that need to be performed using the appropriate HTTP methods in your REST API.
+**Important!** You don't need to build a backend from scratch - plug in an existing one you've been working on in the first year.
+If you don't have an internal server, you should create a new REST API using whatever technology you prefer.
 
-Also you must validate the forms using HTML attributes (inputs must be
-configured for your data format).
-If incorrect data is entered in the inputs, you must use JavaScript to inform
-the user with **modal windows** or just plain alert() function.
+A guide to building a Node.js server if you want to also try JavaScript as a server language >>> [LINK](https://www.w3schools.com/nodejs/default.asp)
 
-**Bonus** points are provided for this work, if you implement a styled modal
-window that will work with JavaScript.
+**Our recommendations and advice:**
+- Working with the REST API with the link fetch() (an example of the POST method)
+- an example of a live coding site
 
-## Requirements:
-- **Responsiveness** absolutely not required.
-- **Styling** is not important at all. Is up to you.
-## Our recommendations and tips:
-- a website example from live coding
-## LIVE CODING LINK (YouTube video)
-https://youtu.be/E4qeqHceD-E
+**LINK TO DIRECT ENCODING ([YouTube video](https://youtu.be/jaRmBtmP2TA))**
