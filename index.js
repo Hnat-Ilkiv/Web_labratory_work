@@ -3,33 +3,7 @@ const divResult = document.getElementById("countDivResult");
 const saveButton = document.getElementById("save_button");
 let sortFlag = false;
 
-let items_list = [
-    {
-        title: "Funny people #1",
-        used_spase_mb: 846,
-        video_time_s: 1743
-    },
-    {
-        title: "Funny dog #2",
-        used_spase_mb: 97,
-        video_time_s: 485
-    },
-    {
-        title: "Funny dog #1",
-        used_spase_mb: 53,
-        video_time_s: 365
-    },
-    {
-        title: "Funny animals #3",
-        used_spase_mb: 96,
-        video_time_s: 593
-    },
-    {
-        title: "Funny animals #2",
-        used_spase_mb: 14,
-        video_time_s: 382
-    }
-];
+let items_list = [];
 
 document.addEventListener("DOMContentLoaded", (event) => {
     console.log("DOM fully loaded and parsed");
@@ -151,3 +125,32 @@ function countItemsSpase() {
     <p>Used storage: ${items_list.reduce((total, item) => total + item.used_spase_mb, 0)} MB</p>
     `;
 }
+
+// Приклад запиту GET
+fetch('http://localhost:3000/items')
+  .then(response => response.json())
+  .then(data => {
+    // Обробка отриманих даних
+    console.log(data);
+  })
+  .catch(error => {
+    // Обробка помилок
+    console.error('Error:', error);
+  });
+
+// Приклад запиту POST
+const data = { title: 'My New Video', used_spase_mb: 200, video_time_s: 300 };
+fetch('http://localhost:3000/items', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(data),
+})
+  .then(response => response.json())
+  .then(data => {
+    console.log('Success:', data);
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
