@@ -15,7 +15,7 @@ async function displayItem() {
                               <h3>${item.title}</h3>
                               <p>Space: ${item.spaseMb} MB </p>
                               <p>Time: ${~~(item.timeSecond / 60)} m ${item.timeSecond % 60} s</p>
-                              <button onclick="editeItems('${item.title}')">Edite Video</button>
+                              <button onclick="editeItems('${item.id}')">Edite Video</button>
                               </li>
                               `).join("") :
                           "";
@@ -60,6 +60,45 @@ function createItems() {
                 itemList.push(data.newItem);
                 document.getElementById('create_modal').style.display = 'none';
                 displayItem();
+            })
+            .catch(error => console.error('Error:', error));
+    }
+}
+
+function editeItems(elementId) {
+    let element = itemList.find(item => item.id === elementId);
+
+    saveButton.innerHTML = `<button class="manager_button" onclick="saveItems('${element.id}')">Save</button>`
+
+    document.getElementById('edite_modal').style.display='block';
+    document.getElementById('video_name_edite_input').value = element.title;
+    document.getElementById('used_spase_mb_edite_input').value = element.spaseMb;
+    document.getElementById('video_time_s_edite_input').value = element.timeSecond;
+}
+
+function saveItems(item_id) {
+    const name = document.getElementById("video_name_edite_input").value.trim();
+    const size = document.getElementById("used_spase_mb_edite_input").value;
+    const time = document.getElementById("video_time_s_edite_input").value;
+
+    if (!name) {
+        alert("Name is missing or contains only spaces.");
+    } else {
+        fetch(`http://localhost:3000/item/${item_id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                title: name,
+                spaseMb: size,
+                timeSecond: time
+            })
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                // оновлення локальних даних або виклик інших функцій
             })
             .catch(error => console.error('Error:', error));
     }
@@ -142,13 +181,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
 //
 // function sortItems() {
 //     console.log("sort items");
-//
-//     if (sortFlag) {
-//         sortFlag = false;
-//         show_items(items_list);
-//     }
-//     else {
-//         sortFlag = true;
 //         show_items(items_list.slice().sort((a, b) => {
 //             const titleA = a.title.toUpperCase();
 //             const titleB = b.title.toUpperCase();
@@ -165,12 +197,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
 //     }
 // }
 //
-// function countItemsSpase() {
-//     console.log("count items spase");
-//     divResult.innerHTML = `
-//     <p>Used storage: ${items_list.reduce((total, item) => total + item.used_spase_mb, 0)} MB</p>
-//     `;
-// }
+function countItemsSpase() {
+    console.log("count items spase");
+    divResult.innerHTML = `
+    <p>Used storage: ${itemList.reduce((total, item) => total + Number(item.spaseMb), 0)} MB</p>
+    `;
+}
 //
 // // Виконуємо GET-запит
 // fetch('http://localhost:3000/items')

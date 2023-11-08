@@ -14,6 +14,18 @@ let itemContainer = [
     spaseMb: 123,
     timeSecond: 456
   },
+  {
+    title: "Item #1",
+    id: uuidv4(),
+    spaseMb: 234,
+    timeSecond: 567
+  },
+  {
+    title: "Item #2",
+    id: uuidv4(),
+    spaseMb: 345,
+    timeSecond: 678
+  }
 ];
 
 // GET request
@@ -44,8 +56,30 @@ app.post('/item', (req, res) => {
 });
 
 // PUT request
-app.put('/item', (req, res) => {
-  res.send('Got a PUT request at /item');
+app.put('/item/:id', (req, res) => {
+  const { id } = req.params;
+  const { title, spaseMb, timeSecond } = req.body;
+
+  const foundIndex = itemContainer.findIndex(item => item.id  === id);
+
+  if (foundIndex !== -1) {
+    if (itemContainer.some(item => item.title === title && item.id !== id)) {
+      res.status(400).json({ error: "An element with that name already exists." });
+    } else if (!title) {
+      res.status(400).json({ error: "Name is missing." });
+    } else {
+      itemContainer[foundIndex] = {
+        id: id,
+        title: title,
+        spaseMb: spaseMb,
+        timeSecond: timeSecond
+      };
+
+      res.status(200).json({ message: "Item updated successfully.", updatedItem: itemContainer[foundIndex] });
+    }
+  } else {
+    res.status(404).json({ error: "Item not found." });
+  }
 });
 
 // DELETE request
