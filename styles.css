@@ -38,8 +38,9 @@ ul {
 }
 li {
     width: 150px;
-    height: 250px;
+    min-height: 200px;
     background: khaki;
+    padding: 5px;
     margin: 10px;
 }
 

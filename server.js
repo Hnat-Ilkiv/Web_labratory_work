@@ -83,8 +83,18 @@ app.put('/item/:id', (req, res) => {
 });
 
 // DELETE request
-app.delete('/item', (req, res) => {
-  res.send('Got a DELETE request at /item');
+app.delete('/item/:id', (req, res) => {
+  const { id } = req.params;
+
+  const foundIndex = itemContainer.findIndex(item => item.id === id);
+
+  if (foundIndex !== -1) {
+    const deletedItem = itemContainer[foundIndex];
+    itemContainer.splice(foundIndex, 1);
+    res.status(200).json({ message: "Item deleted successfully.", deletedItem });
+  } else {
+    res.status(404).json({ error: "Item not found." });
+  }
 });
 
 app.listen(port, () => {

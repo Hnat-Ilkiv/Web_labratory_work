@@ -16,6 +16,7 @@ async function displayItem() {
                               <p>Space: ${item.spaseMb} MB </p>
                               <p>Time: ${~~(item.timeSecond / 60)} m ${item.timeSecond % 60} s</p>
                               <button onclick="editeItems('${item.id}')">Edite Video</button>
+                              <button onclick="deleteItem('${item.id}')">Delete Video</button>
                               </li>
                               `).join("") :
                           "";
@@ -104,6 +105,18 @@ function saveItems(item_id) {
     }
 }
 
+function deleteItem(item_id) {
+    fetch(`http://localhost:3000/item/${item_id}`, {
+        method: 'DELETE'
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            // оновлення локальних даних або виклик інших функцій
+            displayItem();
+        })
+        .catch(error => console.error('Error:', error));
+}
 
 document.addEventListener("DOMContentLoaded", (event) => {
     console.log("DOM fully loaded and parsed");
