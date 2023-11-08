@@ -20,6 +20,7 @@ async function displayItem() {
                               `).join("") :
                           "";
 }
+
 function getItemList() {
     return fetch('http://localhost:3000/item')
         .then(response => response.json())
@@ -30,6 +31,39 @@ function getItemList() {
         .catch(error => console.error('Error:', error));
 }
 
+function createItems() {
+    const name = document.getElementById("video_name_create_input").value.trim();
+    const size = document.getElementById("used_spase_mb_create_input").value;
+    const time = document.getElementById("video_time_s_create_input").value;
+
+    if (itemList.some(item => item.title === name)) {
+        alert("An element with that name already exists.");
+    } else if (!name) {
+        alert("Name is missing.");
+    } else {
+        const newItem = {
+            title: name,
+            spaseMb: size,
+            timeSecond: time
+        };
+
+        fetch('http://localhost:3000/item', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newItem)
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                itemList.push(data.newItem);
+                document.getElementById('create_modal').style.display = 'none';
+                displayItem();
+            })
+            .catch(error => console.error('Error:', error));
+    }
+}
 
 
 document.addEventListener("DOMContentLoaded", (event) => {

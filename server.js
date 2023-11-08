@@ -23,7 +23,24 @@ app.get('/item', (req, res) => {
 
 // POST request
 app.post('/item', (req, res) => {
-  res.send('Got a POST request');
+  const { title, spaseMb, timeSecond } = req.body;
+
+  if (itemContainer.some(item => item.title === title)) {
+    res.status(400).json({ error: "An element with that name already exists." });
+  } else if (!title) {
+    res.status(400).json({ error: "Name is missing." });
+  } else {
+    const newItem = {
+      title: title,
+      id: uuidv4(),
+      spaseMb: spaseMb,
+      timeSecond: timeSecond
+    };
+
+    itemContainer.push(newItem);
+
+    res.status(200).json({ message: "Item added successfully.", newItem });
+  }
 });
 
 // PUT request
