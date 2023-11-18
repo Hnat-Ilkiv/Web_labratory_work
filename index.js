@@ -4,6 +4,15 @@ const saveButton = document.getElementById("save_button");
 
 let itemList = [];
 
+function getItemList() {
+    return fetch('http://localhost:3000/item')
+        .then(response => response.json())
+        .then(data => {
+            itemList = data;
+            console.log("Data stored in itemList:", itemList);
+        })
+        .catch(error => console.error('Error:', error));
+}
 
 async function displayItem() {
     await getItemList();
@@ -36,16 +45,6 @@ function show_items(items) {
                               </li>
                               `).join("") :
                           "";
-}
-
-function getItemList() {
-    return fetch('http://localhost:3000/item')
-        .then(response => response.json())
-        .then(data => {
-            itemList = data;
-            console.log("Data stored in itemList:", itemList);
-        })
-        .catch(error => console.error('Error:', error));
 }
 
 function createItems() {
@@ -130,7 +129,6 @@ function deleteItem(item_id) {
         .then(response => response.json())
         .then(data => {
             console.log(data);
-            // оновлення локальних даних або виклик інших функцій
             displayItem();
         })
         .catch(error => console.error('Error:', error));
