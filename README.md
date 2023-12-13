@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+# Лабораторні роботи з React
+## Завдання 6: Домашня сторінка React.js (SPA)
+- [ ] Створити додаток React з домашньою сторінкою за макетом.
+- [ ] Використовувати лише бібліотеку React.js та create-react-app для створення проекту.
+- [ ] Реалізувати відображення всіх елементів макету.
+- [ ] Використовувати CSS або бібліотеки компонентів для стилізації.
+- [ ] Додати мінімальний функціонал для перегляду.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Завдання 7: Сторінка каталогу React.js (з використанням React Routing)
+- [ ] Додати сторінку каталогу зі списком товарів за макетом.
+- [ ] Використовувати react-router-dom для реалізації маршрутизації.
+- [ ] Забезпечити належне відображення всіх UI елементів.
+- [ ] Зберігати функціональність фільтрації та пошуку для майбутніх завдань.
 
-## Available Scripts
+## Завдання 8: Сторінка товару React.js
+- [ ] Додати сторінку для окремого товару за макетом.
+- [ ] Зробити сторінки Домашня та Каталог більш інтерактивними.
+- [ ] Зберігати товари в стані чи контексті сторінки.
+- [ ] Реалізувати кнопку "Переглянути більше" для сторінки Домашня.
+- [ ] Реалізувати фільтрацію списку товарів на сторінці Каталогу.
 
-In the project directory, you can run:
+## Завдання 9: Підключення до REST API React.js
+- [ ] Взаємодіяти з REST API сервером за допомогою axios.
+- [ ] Розділити всі функції API в окремий файл.
+- [ ] Завантажувати всі товари на сторінці Каталогу з сервера.
+- [ ] Реалізувати фільтрацію за допомогою GET запитів.
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Завдання 10: Redux: Сторінка кошика (кошик товарів)
+- [ ] Додати сторінку кошика покупок та використовувати Redux.
+- [ ] Реалізувати додавання товарів до кошика через потік Redux.
+- [ ] Реалізувати дії додавання/видалення товарів на сторінці кошика через Redux.
+- [ ] Зберігати всі частини Redux в окремих файлах.
+- [ ] Використовувати useSelector та useDispatch.
