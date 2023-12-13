@@ -1,0 +1,6 @@
+.search_input {
+    display: flex;
+    width: 200px;
+    height: 40px;
+    border-radius: 15px;
+}   

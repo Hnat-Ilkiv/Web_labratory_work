@@ -1,0 +1,42 @@
+h1 {
+    font-size: 25px;
+  }
+  
+  .card {
+    width: 280px;
+    height: 620px;
+    background-color: rgb(123, 11, 39);
+    border-radius: 30px;
+    border: rgb(18, 27, 2) double 10px;
+    margin-left: 40px;
+    color: #d7c3c3;
+  }
+  
+  .div_img2 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    max-width: 250px;
+    width: auto;
+    height: 200px;
+  }
+  
+  .center {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .price_age {
+    display: flex-start;
+    flex-direction: column;
+    padding-left: 30px;
+    font-weight: 600;
+    width: 180px;
+  }
+  
+  .card_description {
+    justify-content: center;
+    padding-inline: 10px;
+    align-items: center;
+    text-align: justify;
+  }

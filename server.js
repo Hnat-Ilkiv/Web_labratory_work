@@ -69,14 +69,29 @@ app.get('/objects', (req, res) => {
   const { filterBy, value } = req.query;
 
   if (filterBy && value) {
-    const filteredWaifus = objectContainer.filter(waifu => waifu[filterBy] == value);
-    res.json(filteredWaifus);
+    let filteredKuns;
+
+    if (filterBy === "search") {
+      filteredKuns = objectContainer.filter((kun) => 
+        (kun.name + kun.description).toLowerCase().includes(value.toLowerCase())
+      );
+    } else {
+      filteredKuns = objectContainer.filter((kun) => kun[filterBy] == value);
+    }
+
+    res.json(filteredKuns);
   } else {
     res.json(objectContainer);
   }
 });
 
-app.get('/age')
+app.get('/ages', (req, res) => {
+  res.json(objectContainer.map(item => item["age"]));
+});
+
+app.get('/prices', (req, res) => {
+  res.json(objectContainer.map(item => item["price"]));
+});
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}/objects`);

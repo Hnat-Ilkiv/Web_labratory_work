@@ -1,0 +1,11 @@
+.clear_button {
+    width: 130px;
+    height: 30px;
+    background-color: rgb(198, 122, 198);
+    border-radius: 10px;
+    border: rgb(136, 69, 69) double  4px;
+  }
+  
+  .clear_button:hover {
+    cursor: pointer;
+  }
