@@ -1,6 +1,6 @@
 import React from "react";
 import Hero from "./hero"
-import ObjectList from "./object_list";
+import ObjectList from "./home_list";
 
 function Home() {
 	return (

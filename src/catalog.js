@@ -1,5 +1,11 @@
+import CatalogList from "./catalog_list";
+
 const Catalog = () => {
-  return <div>Catalog page</div>;
+  return (
+    <div>
+      <CatalogList />
+    </div>
+  );
 };
 
 export default Catalog;

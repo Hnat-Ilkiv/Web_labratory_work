@@ -116,74 +116,22 @@ let objectContainer = [
 ];
 
 // GET request
+
+// app.get('/objects', (req, res) => {
+//   res.json(objectContainer);
+// });
+
 app.get('/objects', (req, res) => {
-  res.json(objectContainer);
-});
+  const { filterBy, value } = req.query;
 
-// POST request
-app.post('/item', (req, res) => {
-  const { title, spaseMb, timeSecond } = req.body;
-
-  if (objectContainer.some(item => item.title === title)) {
-    res.status(400).json({ error: "An element with that name already exists." });
-  } else if (!title) {
-    res.status(400).json({ error: "Name is missing." });
+  if (filterBy && value) {
+    const filteredWaifus = objectContainer.filter(waifu => waifu[filterBy] == value);
+    res.json(filteredWaifus);
   } else {
-    const newItem = {
-      title: title,
-      id: uuidv4(),
-      spaseMb: spaseMb,
-      timeSecond: timeSecond
-    };
-
-    objectContainer.push(newItem);
-
-    res.status(200).json({ message: "Item added successfully.", newItem });
-  }
-});
-
-// PUT request
-app.put('/item/:id', (req, res) => {
-  const { id } = req.params;
-  const { title, spaseMb, timeSecond } = req.body;
-
-  const foundIndex = objectContainer.findIndex(item => item.id  === id);
-
-  if (foundIndex !== -1) {
-    if (objectContainer.some(item => item.title === title && item.id !== id)) {
-      res.status(400).json({ error: "An element with that name already exists." });
-    } else if (!title) {
-      res.status(400).json({ error: "Name is missing." });
-    } else {
-      objectContainer[foundIndex] = {
-        id: id,
-        title: title,
-        spaseMb: spaseMb,
-        timeSecond: timeSecond
-      };
-
-      res.status(200).json({ message: "Item updated successfully.", updatedItem: objectContainer[foundIndex] });
-    }
-  } else {
-    res.status(404).json({ error: "Item not found." });
-  }
-});
-
-// DELETE request
-app.delete('/item/:id', (req, res) => {
-  const { id } = req.params;
-
-  const foundIndex = objectContainer.findIndex(item => item.id === id);
-
-  if (foundIndex !== -1) {
-    const deletedItem = objectContainer[foundIndex];
-    objectContainer.splice(foundIndex, 1);
-    res.status(200).json({ message: "Item deleted successfully.", deletedItem });
-  } else {
-    res.status(404).json({ error: "Item not found." });
+    res.json(objectContainer);
   }
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+  console.log(`Example app listening at http://localhost:${port}/objects`);
 });
