@@ -1,27 +1,113 @@
 body {
-  min-height: 100vh;
-  margin: 0 auto;
-  max-width: 2000px;
-  background: linear-gradient(30deg, #87CEEB, #FFC0CB);
-  background-size: cover;
-  animation: gradientWaves 15s ease-in-out infinite;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+	"Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+	sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	min-height: 100vh;
+	margin: 0 auto;
+	max-width: 2000px;
+	background: linear-gradient(30deg, #87CEEB, #FFC0CB);
+	background-size: cover;
+	animation: gradientWaves 15s ease-in-out infinite;
 }
 
 @keyframes gradientWaves {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+select:hover {
+	cursor: pointer;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+.loader,
+.loader:before,
+.loader:after {
+	border-radius: 50%;
+}
+
+.loader {
+	color: #ffffff;
+	font-size: 11px;
+	text-indent: -99999em;
+	margin: 55px auto;
+	position: relative;
+	width: 10em;
+	height: 10em;
+	box-shadow: inset 0 0 0 1em;
+	-webkit-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	transform: translateZ(0);
+}
+
+.loader:before,
+.loader:after {
+	position: absolute;
+	content: "";
+}
+
+.loader:before {
+	width: 5.2em;
+	height: 10.2em;
+	background: #0c0d0d;
+	border-radius: 10.2em 0 0 10.2em;
+	top: -0.1em;
+	left: -0.1em;
+	-webkit-transform-origin: 5.1em 5.1em;
+	transform-origin: 5.1em 5.1em;
+	-webkit-animation: load2 2s infinite ease 1.5s;
+	animation: load2 2s infinite ease 1.5s;
+}
+
+.loader:after {
+	width: 5.2em;
+	height: 10.2em;
+	background: #0c0d0d;
+	border-radius: 0 10.2em 10.2em 0;
+	top: -0.1em;
+	left: 4.9em;
+	-webkit-transform-origin: 0.1em 5.1em;
+	transform-origin: 0.1em 5.1em;
+	-webkit-animation: load2 2s infinite ease;
+	animation: load2 2s infinite ease;
+}
+
+@-webkit-keyframes load2 {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes load2 {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
 }

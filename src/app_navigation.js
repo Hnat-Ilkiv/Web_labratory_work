@@ -8,12 +8,13 @@ import {
 
 import Catalog from "./catalog";
 import Cart from "./cart";
-import Home from "./home";
+import Home from "./home_page";
+import CardPage from "./card_page";
 
 import logo from "./images/logo.png";
-import "./css/header.css";
+import "./css/app_navigation.css";
 
-const Navigation = () => (
+const AppNavigation = () => (
 	<Router>
 		<header>
 			<img src={logo} className="logo" alt="Logo" />
@@ -39,9 +40,11 @@ const Navigation = () => (
 		<Routes>
 			<Route path="/" Component={Home} />
 			<Route path="/catalog" Component={Catalog} />
-			<Route path="/cart" Component={Cart} />
+			<Route path="/cart" element={<Cart />} />
+
+			<Route path="/card/:id" element={<CardPage />} />
 		</Routes>
 	</Router>
 );
 
-export default Navigation;
+export default AppNavigation;

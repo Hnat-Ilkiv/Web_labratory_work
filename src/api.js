@@ -2,22 +2,22 @@ import axios from "axios";
 
 const http = axios.create({ baseURL: "http://localhost:5000" });
 
-export default async function getWaifus() {
+export default async function getKuns() {
   const response = await http.get("/objects");
   return response.data;
 }
 
-// export async function getAges() {
-//   const response = await http.get("ages");
-//   return response.data;
-// }
+export async function getAges() {
+  const response = await http.get("ages");
+  return response.data;
+}
 
-// export async function getPrices() {
-//   const response = await http.get("prices");
-//   return response.data;
-// }
+export async function getPrices() {
+  const response = await http.get("prices");
+  return response.data;
+}
 
-export async function getWaifu(id) {
+export async function getKun(id) {
   const response = await http.get(`/objects/${id}`);
   return response.data;
 }
@@ -32,7 +32,7 @@ export async function getFilteredByAge(age) {
   return response.data;
 }
 
-export async function searchWaifus(query) {
+export async function searchKuns(query) {
   const response = await http.get(`/objects/search?query=${query}`);
   return response.data;
 }

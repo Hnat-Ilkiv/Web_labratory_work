@@ -1,13 +1,13 @@
 import React from "react";
-import Hero from "./hero"
-import ObjectList from "./home_list";
+import HomeHero from "./home_hero"
+import HomeList from "./home_list";
 
 function Home() {
 	return (
 		<div>
 			<div>
-				<Hero />
-				<ObjectList />
+				<HomeHero />
+				<HomeList />
 			</div>
 		</div>
 	);

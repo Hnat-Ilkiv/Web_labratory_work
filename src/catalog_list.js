@@ -1,25 +1,25 @@
 import React, { useState, useEffect, useCallback } from "react";
-import "./css/bank_list.css";
-import ObjectDiv from "./object_card";
+import "./css/catalog_list.css";
+import BankCard from "./bank_card";
 import NextButton from "./next_btn";
 import BackButton from "./back_btn";
 import getWaifus, {
-//   getAges,
-//   getPrices,
+  getAges,
+  getPrices,
   getFilteredByAge,
   getFilteredByPrice,
   searchWaifus,
-} from "./api";
+} from "../../../api";
 import Option from "./filter_option";
 import SearchInput from "./search";
 import ClearButton from "./clear_btn";
 import ApplyButton from "./apply_btn";
 
-const CatalogList = () => {
+const BankList = () => {
   const [items, setItems] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-//   const [ages, setAges] = useState([]);
-//   const [prices, setPrices] = useState([]);
+  const [ages, setAges] = useState([]);
+  const [prices, setPrices] = useState([]);
   const [selectedAgeFilter, setSelectedAgeFilter] = useState("None");
   const [selectedPriceFilter, setSelectedPriceFilter] = useState("None");
   const [activeFilter, setActiveFilter] = useState("None");
@@ -33,19 +33,18 @@ const CatalogList = () => {
   const allItems = useCallback(() => {
     getWaifus().then((data) => {
       setItems(data);
-      console.log(data);
     });
   }, []);
 
-//   useEffect(() => {
-//     getAges().then((data) => {
-//       setAges(data["ages"]);
-//     });
+  useEffect(() => {
+    getAges().then((data) => {
+      setAges(data["ages"]);
+    });
 
-//     getPrices().then((data) => {
-//       setPrices(data["prices"]);
-//     });
-//   }, []);
+    getPrices().then((data) => {
+      setPrices(data["prices"]);
+    });
+  }, []);
 
   useEffect(() => {
     if (activeFilter !== "None") {
@@ -113,7 +112,7 @@ const CatalogList = () => {
             }}
           >
             {Option("None")}
-            {/* {ages.map((item) => Option(item))} */}
+            {ages.map((item) => Option(item))}
           </select>
           Price Filter:
           <select
@@ -125,7 +124,7 @@ const CatalogList = () => {
             }}
           >
             {Option("None")}
-            {/* {prices.map((item) => Option(item))} */}
+            {prices.map((item) => Option(item))}
           </select>
         </div>
         <div className="search_div">
@@ -136,7 +135,7 @@ const CatalogList = () => {
       </div>
       <div className="bank_list2">
         {items.length > 0 ? (
-          displayItems.map((item) => ObjectDiv(item.id, item))
+          displayItems.map((item) => BankCard(item.id, item))
         ) : (
           <div className="loader">Loading...</div>
         )}
@@ -149,4 +148,4 @@ const CatalogList = () => {
   );
 };
 
-export default CatalogList;
+export default BankList;

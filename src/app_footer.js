@@ -1,8 +1,8 @@
 import React from "react";
-import "./css/footer.css"
-import BrandingStuff from "./branding_stuff";
+import "./css/app_footer.css"
+import BrandingStuff from "./app_footer_branding";
 
-const Footer = () => {
+const AppFooter = () => {
 	return (
 		<div className="footer">
 			<BrandingStuff />
@@ -15,4 +15,4 @@ const Footer = () => {
 	);
 }
 
-export default Footer;
+export default AppFooter;

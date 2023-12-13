@@ -1,0 +1,27 @@
+.bank_list1 {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 50px;
+    height: 420px;
+    flex-wrap: wrap;
+  }
+  
+  .second_section {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .button {
+    width: 200px;
+    height: 60px;
+    background-color: rgb(59, 21, 157);
+    border-radius: 20px;
+    margin-top: 50px;
+    color: #fff;
+    border: grey solid 2px;
+  }
+  
+  .button_div {
+    display: flex;
+    justify-content: center;
+  }

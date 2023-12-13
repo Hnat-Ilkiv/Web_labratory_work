@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
-import waifusInCartReducer from "./waifus_in_cart";
+import waifusInCartReducer from "./kuns_in_cart";
 
 export default configureStore({
-  reducer: { waifusInCart: waifusInCartReducer },
+	reducer: { waifusInCart: waifusInCartReducer }
 });

@@ -1,5 +1,5 @@
 import React from "react";
-import "./css/branding_stuff.css";
+import "./css/app_footer_branding.css";
 import logo from "./images/logo.png";
 
 const BrandingStuff = (props) => {

@@ -1,12 +1,12 @@
 import React from "react";
-import Footer from "./footer";
-import Navigation from "./navigation";
+import AppFooter from "./app_footer";
+import AppNavigation from "./app_navigation";
 
 function App() {
 	return (
 		<div>
-			<Navigation />
-			<Footer />
+			<AppNavigation />
+			<AppFooter />
 		</div>
 );
 }

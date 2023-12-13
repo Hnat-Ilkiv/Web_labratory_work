@@ -1,5 +1,5 @@
 import React from "react";
-import "./css/card.css";
+import "./css/home_card.css";
 // import { images } from "./images_constants";
 
 const ObjectDiv = (key, item) => {

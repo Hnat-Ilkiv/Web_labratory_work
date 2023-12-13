@@ -1,0 +1,24 @@
+.hero {
+	padding-top: 50px;
+	padding-left: 100px;
+	display: flex;
+	justify-content: space-around;
+}
+
+.text_div {
+	display: flex;
+	flex-direction: column;
+	width: 1000px;
+	color: white;
+}
+
+.text_title {
+	padding-bottom: 10px;
+	font-weight: bold;
+	font-size: 40px;
+}
+
+
+.page_description {
+	width: 620px;
+}
