@@ -11,7 +11,7 @@ app.use(express.json());
 let objectContainer = [
   {
     id: uuidv4(),
-    image: "",
+    image: "https://cdn.iconscout.com/icon/free/png-256/free-avatar-370-456322.png",
     name: "Name 1",
     age: 1,
     price: 1,

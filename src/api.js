@@ -19,7 +19,7 @@ export async function getPrices() {
 
 export async function getKun(id) {
   const response = await http.get(`/objects/?filterBy=id&value=${id}`);
-  return response.data;
+  return response.data[0];
 }
 
 export async function getFilteredByPrice(price) {

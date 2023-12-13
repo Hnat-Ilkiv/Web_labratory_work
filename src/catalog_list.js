@@ -37,6 +37,8 @@ const BankList = () => {
     }, []);
   
     useEffect(() => {
+      allItems();
+      
       getAges().then((data) => {
         setAges(data);
       });

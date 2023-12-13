@@ -1,0 +1,51 @@
+.card_item_page {
+    display: flex;
+    color: bisque;
+    height: 600px;
+  }
+  
+  .column {
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+  }
+  
+  .price_age2 {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 80px;
+    margin-left: 30px;
+    width: 300px;
+  }
+  
+  .card_item_image {
+    width: 300px;
+    height: 400px;
+  }
+  
+  .cart_page_button {
+    display: flex;
+    width: 200px;
+    height: 40px;
+    background-color: antiquewhite;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .item_title {
+    padding-top: 50px;
+    padding-left: 50px;
+  }
+  
+  .buttons {
+    padding-top: 80px;
+    display: flex;
+    width: 600px;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  
+  .waifu_description {
+    width: 800px;
+    margin-left: 30px;
+  }
