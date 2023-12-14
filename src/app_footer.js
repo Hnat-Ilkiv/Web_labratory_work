@@ -10,7 +10,7 @@ const AppFooter = () => {
 				<div className="line">
 				</div>
 			</div>
-			<div className="line_div">2020 IoT © Copyright all rights reserved, bla bla</div>
+			<div className="line_div">2023 IoT © Web programing</div>
 		</div>
 	);
 }

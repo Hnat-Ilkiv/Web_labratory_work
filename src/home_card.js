@@ -3,8 +3,8 @@ import "./css/home_card.css";
 
 const HomeCard = (key, kun) => {
   const truncatedDescription =
-    kun.description.length > 120
-      ? kun.description.slice(0, 90) + "..."
+    kun.description.length > 320
+      ? kun.description.slice(0, 300) + "..."
       : kun.description;
 
   return (

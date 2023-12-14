@@ -33,6 +33,7 @@
 
   .kun_description {
     margin: 50px;
+    max-width: 400px;
   }
   
   .price_age2 {

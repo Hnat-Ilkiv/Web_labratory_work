@@ -1,7 +1,13 @@
 .branding_stuff {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     padding-top: 30px;
+  }
+
+  .branding_stuff_text {
+    text-align: center;
+    width: 200px;
   }
   
   .branding_stuff_title {
