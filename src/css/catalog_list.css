@@ -1,44 +1,54 @@
-.bank_list2 {
+.catalog_list {
+  display: flex;
+  flex-direction: column;
+
+  max-width: 1920px;
+  margin: 0px 40px;
+  background-color: #fafafa;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.catalog_list_show {
     display: flex;
-    flex-direction: row;
+    justify-content: space-evenly;
+    
     padding-top: 50px;
-    height: 650px;
+    height: 400px;
     flex-wrap: wrap;
+  }
+
+  .catalog_button_navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    font-size: 40px;
   }
   
   .back_arrow {
-    position: absolute;
-    right: 20px;
     width: 100px;
-    height: 40px;
-    bottom: 270px;
-    top: 530px;
+    height: 80px;
   }
   
-  .back_arrow:hover {
+  /* .back_arrow:hover {
     cursor: pointer;
-  }
+  } */
   
   .arrow {
-    position: absolute;
-    right: 20px;
-    top: 90px;
     width: 100px;
-    height: 40px;
-    top: 450px;
-    color: white;
+    height: 80px;
   }
   
-  .arrow:hover {
+  /* .arrow:hover {
     cursor: pointer;
-  }
+  } */
   
   .filters_div {
     display: flex;
-    border-bottom: 1px solid green;
     color: azure;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
   }
   
   .filters {
@@ -51,30 +61,41 @@
   }
   
   .filter {
-    border-radius: 10px;
-    height: 45px;
-    width: 200px;
-    color: bisque;
+    border-radius: 20px;
+    border: none;
+    height: 35px;
+    width: 150px;
+    background: #fafafa;
+    font-family: 'Open-Dyslexic', sans-serif;
+    color: #2d383c;  text-decoration: none;
     align-items: center;
     padding-left: 35px;
-    background-color: rgb(97, 14, 14);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
   
   .card_view_button {
+    text-decoration: none;
     display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    align-items: center;
-    width: 140px;
+    border: none;
+    font-family: 'Open-Dyslexic', sans-serif;
+    width: 180px;
     height: 40px;
-    background-color: bisque;
-    border-radius: 10px;
-    border: rebeccapurple solid 2px;
+    border-radius: 20px;
+    background: linear-gradient(150deg, #87CEEB, #FFC0CB);  
+    transition: background 0.3s ease;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #2d383c;
+  }
+
+  .card_view_button:hover {
+    text-decoration: none;
+    background: linear-gradient(150deg, rgba(135, 206, 235, 0.7), rgba(255, 192, 203, 0.7));
   }
   
   .search_div {
     display: flex;
-    justify-content: space-around;
     align-items: center;
-    width: 400px;
+    margin: 0 30px;
   }

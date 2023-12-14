@@ -1,13 +1,38 @@
-.card_item_page {
+.card_page {
     display: flex;
+    justify-content: space-evenly;
+    align-items: center;
     color: bisque;
-    height: 600px;
+    height: 560px;
+
+    max-width: 1920px;
+    margin: 0px 40px;
+    background-color: #fafafa;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   }
   
+  .card_img {
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 20px;
+	  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
   .column {
     display: flex;
     flex-direction: column;
     margin-left: 40px;
+  }
+
+  .card_description{
+    display: flex;
+    align-items: center;
+  }
+
+  .kun_description {
+    margin: 50px;
   }
   
   .price_age2 {
@@ -18,18 +43,27 @@
     width: 300px;
   }
   
-  .card_item_image {
-    width: 300px;
-    height: 400px;
-  }
   
-  .cart_page_button {
+  
+  .card_button {
+    text-decoration: none;
     display: flex;
+    border: none;
+    font-family: 'Open-Dyslexic', sans-serif;
     width: 200px;
     height: 40px;
-    background-color: antiquewhite;
+    border-radius: 20px;
+    background: linear-gradient(150deg, #87CEEB, #FFC0CB);  
+    transition: background 0.3s ease;
     justify-content: center;
     align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #2d383c;
+  }
+
+  .card_button:hover {
+    text-decoration: none;
+    background: linear-gradient(150deg, rgba(135, 206, 235, 0.7), rgba(255, 192, 203, 0.7));
   }
   
   .item_title {

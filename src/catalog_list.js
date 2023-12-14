@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import "./css/catalog_list.css";
-import BankCard from "./catalog_card";
+import CatalogCard from "./catalog_card";
 import NextButton from "./catalog_button_next";
 import BackButton from "./catalog_button_back";
 import getKuns, {
@@ -15,9 +15,10 @@ import SearchInput from "./catalog_search";
 import ClearButton from "./catalog_button_clear";
 import ApplyButton from "./catalog_button_apply";
 
-const BankList = () => {
+const CatalogList = () => {
     const [items, setItems] = useState([]);
-    const [currentPage, setCurrentPage] = useState(1);
+    const savedCurrentPage = localStorage.getItem('currentPage');
+    const [currentPage, setCurrentPage] = useState(savedCurrentPage ? parseInt(savedCurrentPage) : 1);
     const [ages, setAges] = useState([]);
     const [prices, setPrices] = useState([]);
     const [selectedAgeFilter, setSelectedAgeFilter] = useState("All");
@@ -29,7 +30,7 @@ const BankList = () => {
     const startIdx = (currentPage - 1) * itemsPerPage;
     const endIdx = startIdx + itemsPerPage;
     const displayItems = items.slice(startIdx, endIdx);
-  
+      
     const allItems = useCallback(() => {
         getKuns().then((data) => {
         setItems(data);
@@ -70,22 +71,24 @@ const BankList = () => {
           }
         }
       }
-      setCurrentPage(1);
     }, [activeFilter, selectedPriceFilter, selectedAgeFilter, allItems]);
   
     function handleClickNext() {
       if (currentPage * itemsPerPage < items.length) {
+        localStorage.setItem('currentPage', currentPage + 1);
         setCurrentPage(currentPage + 1);
       }
     }
   
     function handleClickBack() {
       if (currentPage > 1) {
+        localStorage.setItem('currentPage', currentPage - 1);
         setCurrentPage(currentPage - 1);
       }
     }
   
     function clear() {
+      localStorage.setItem('currentPage', 1);
       setCurrentPage(1);
       setSelectedAgeFilter("All");
       setSelectedPriceFilter("All");
@@ -97,12 +100,14 @@ const BankList = () => {
         searchKuns(searchValue).then((data) => {
             setItems(data);
         });
+        localStorage.setItem('currentPage', 1);
         setCurrentPage(1);
     }
   
     return (
-      <div className="second_section">
+      <div className="catalog_list">
         <div className="filters_div">
+        {ClearButton(clear)}
           <div className="filters">
             Age Filter:
             <select
@@ -133,15 +138,21 @@ const BankList = () => {
             {SearchInput(setSearchValue, searchValue)}
             {ApplyButton(apply)}
           </div>
-          {ClearButton(clear)}
         </div>
-        <div className="bank_list2">
+
+        <div className="catalog_list_show">
           {items.length > 0 ? (
-            displayItems.map((item) => BankCard(item.id, item))
+            displayItems.map((item) => CatalogCard(item.id, item))
           ) : (
-            <div className="loader">Loading...</div>
+            <div class="loader-container">
+						  <div class="loader"></div>
+					  </div>
           )}
+        </div>
+
+        <div className="catalog_button_navigation">
           {!isFirstPage && <BackButton func={handleClickBack} />}
+          {currentPage}
           {currentPage * itemsPerPage < items.length && (
             <NextButton func={handleClickNext} />
           )}
@@ -150,4 +161,4 @@ const BankList = () => {
     );
   };
   
-  export default BankList;
+  export default CatalogList;

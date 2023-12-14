@@ -10,7 +10,7 @@ const BackButton = (props) => {
           <title>Artboard-35</title>
           <g id="Left-2" data-name="Left">
             <polygon
-              stroke="white"
+              stroke="#2d383c"
               points="24 12.001 2.914 12.001 8.208 6.706 7.501 5.999 1 12.501 7.5 19.001 8.207 18.294 2.914 13.001 24 13.001 24 12.001"
             />
           </g>

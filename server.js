@@ -19,7 +19,7 @@ let objectContainer = [
   },
   {
     id: uuidv4(),
-    image: "",
+    image: "https://dfstudio-d420.kxcdn.com/wordpress/wp-content/uploads/2019/06/digital_camera_photo-1080x675.jpg",
     name: "Name 2",
     age: 2,
     price: 2,
@@ -27,7 +27,31 @@ let objectContainer = [
   },
   {
     id: uuidv4(),
-    image: "",
+    image: "https://w0.peakpx.com/wallpaper/569/300/HD-wallpaper-android-12-android-google-i-o-google-smartphone-background-thumbnail.jpg",
+    name: "Name 3",
+    age: 3,
+    price: 3,
+    description: "Description 3"
+  },
+  {
+    id: uuidv4(),
+    image: "https://cdn.iconscout.com/icon/free/png-256/free-avatar-370-456322.png",
+    name: "Name 1",
+    age: 1,
+    price: 1,
+    description: "Description 1"
+  },
+  {
+    id: uuidv4(),
+    image: "https://dfstudio-d420.kxcdn.com/wordpress/wp-content/uploads/2019/06/digital_camera_photo-1080x675.jpg",
+    name: "Name 2",
+    age: 2,
+    price: 2,
+    description: "Description 2"
+  },
+  {
+    id: uuidv4(),
+    image: "https://w0.peakpx.com/wallpaper/569/300/HD-wallpaper-android-12-android-google-i-o-google-smartphone-background-thumbnail.jpg",
     name: "Name 3",
     age: 3,
     price: 3,
@@ -86,11 +110,15 @@ app.get('/objects', (req, res) => {
 });
 
 app.get('/ages', (req, res) => {
-  res.json(objectContainer.map(item => item["age"]));
+  res.json(objectContainer
+    .map(item => item.age)
+    .filter((value, index, self) => self.indexOf(value) === index));
 });
 
 app.get('/prices', (req, res) => {
-  res.json(objectContainer.map(item => item["price"]));
+  res.json(objectContainer
+    .map(item => item.price)
+    .filter((value, index, self) => self.indexOf(value) === index));
 });
 
 app.listen(port, () => {

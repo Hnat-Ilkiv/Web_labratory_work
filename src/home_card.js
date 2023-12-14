@@ -1,35 +1,35 @@
 import React from "react";
 import "./css/home_card.css";
-// import { images } from "./images_constants";
 
-const ObjectDiv = (key, item) => {
+const HomeCard = (key, kun) => {
+  const truncatedDescription =
+    kun.description.length > 120
+      ? kun.description.slice(0, 90) + "..."
+      : kun.description;
+
   return (
-    // <div className="object_div" key={key}>
-    //   <div className="center">
-    //     <img className="div_img" src={images[item.image]} alt={item.title} />
-    //   </div>
-    //   <h2 className="center">{item.title}</h2>
-    //   <p className="center">{item.description}</p>
-    // </div>
-
-    <div class="card" key={key}>
-      <div class="card-inner">
-          <div class="front">
-              {/* <img className="card-img" src={images[item.image]} alt="Аvatar" /> */}
-              <img className="card-img" src={item.image} alt="Аvatar" />
-              <h2 className="card-name">
-                {item.name}
-              </h2>
-              <p className="card-p">
-                {item.price} £
-              </p>
-          </div>
-          <div class="back">
-              <p className="card-p">{item.description}</p>
-          </div>
+    <div className="home_card_place">
+      <div class="home_card" key={key}>
+        <div class="home_card_inner">
+            <div class="home_card_front">
+                <img className="home_card_img" src={kun.image} alt="Аvatar" />
+                <h2 className="home_card_name">
+                  {kun.name}
+                </h2>
+                <p className="home_card_p">
+                  Age: {kun.age} yares old
+                </p>
+                <p className="home_card_p">
+                  Price: {kun.price} £
+                </p>
+            </div>
+            <div class="home_card_back">
+                <p className="card-p">{truncatedDescription}</p>
+            </div>
+        </div>
       </div>
     </div>
   );
 };
 
-export default ObjectDiv;
+export default HomeCard;

@@ -18,20 +18,51 @@ header {
 
 li {
     list-style: none;
+    font-size: 20px;
 }
+li a {
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: inherit;
+    text-decoration: none;
+    margin: 0 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.06);
+}
+
+li a:active {
+    color: inherit;
+}
+
+li a:hover {
+    background: rgba(0, 0, 0, 0.1);
+  }
 
 .header_links {
     display: flex;
     width: 300px;
     justify-content: space-between;
     margin: 0 auto;
-    padding-right: 100px;
+    padding: 0;
+    padding-right: 150px;
 }
 
 .selected {
+    text-decoration: none;  
+    background: linear-gradient(150deg, #87CEEB, #FFC0CB);  
+    transition: background 0.3s ease;
+}
+
+.selected:hover {
     text-decoration: none;
+    background: linear-gradient(150deg, rgba(135, 206, 235, 0.7), rgba(255, 192, 203, 0.7));  
 }
 
 .not-selected {
     text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.not-selected:hover {
+    text-decoration: none;
+    background: rgba(0, 0, 0, 0.1);
 }

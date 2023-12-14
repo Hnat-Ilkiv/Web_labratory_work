@@ -1,11 +1,16 @@
 .clear_button {
-    width: 130px;
-    height: 30px;
-    background-color: rgb(198, 122, 198);
-    border-radius: 10px;
-    border: rgb(136, 69, 69) double  4px;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  background: #fafafa;
+  font-family: 'Open-Dyslexic', sans-serif;
+  color: #2d383c;  text-decoration: none;
+  margin: 0 50px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease;
   }
   
   .clear_button:hover {
-    cursor: pointer;
+    text-decoration: none;
+    background: rgba(0, 0, 0, 0.1);
   }

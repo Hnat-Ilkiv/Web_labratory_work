@@ -1,30 +1,99 @@
 .cart_page {
-    color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    max-width: 1920px;
+    margin: 0px 40px;
+    background-color: #fafafa;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   }
-  
-  .buttons2 {
+
+  .cart_card {
     display: flex;
-    width: 800px;
     justify-content: space-between;
-  }
-  
-  .waifu_cart_item {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
     align-items: center;
-    width: 400px;
-    height: 110px;
+    width: 720px;
+    height: 120px;
     margin-bottom: 10px;
-    background-color: blueviolet;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .cart_card_information {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+  }
+
+  .cart_image {
+    width: 200px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 20px;
+	  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .cart_description {
+    margin: 10px;
+  }
+
+  .remove_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    font-family: 'Open-Dyslexic', sans-serif;
+    width: 60px;
+    height: 60px;
+    border-radius: 20px;
+    margin: 30px;
+    background: none;
+    border: none;
+  }
+
+  .remove_button:hover {
+    background: rgba(0, 0, 0, 0.1);
+  }
+
+  .cart_card_dump {
+    width: 60px;
+    height: 60px;
+  }
+
+  .cart_navigation {
+    display: flex;
+    width: 600px;
+    height: 80px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .cart_button_page {
+    text-decoration: none;
+    display: flex;
+    border: none;
+    font-family: 'Open-Dyslexic', sans-serif;
+    width: 200px;
+    height: 40px;
+    border-radius: 20px;
+    background: linear-gradient(150deg, #87CEEB, #FFC0CB);  
+    transition: background 0.3s ease;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #2d383c;
+  }
+
+  .cart_button_page:hover {
+    text-decoration: none;
+    background: linear-gradient(150deg, rgba(135, 206, 235, 0.7), rgba(255, 192, 203, 0.7));
   }
   
-  .remove_button {
-    width: 50px;
-  }
+ 
+  
+  
   
   .text_div2 {
     display: flex;
@@ -32,6 +101,3 @@
     width: 50px;
   }
   
-  .cart_image {
-    height: 100px;
-  }

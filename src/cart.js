@@ -4,23 +4,23 @@ import WaifuCartItem from "./cart_card";
 import "./css/cart.css";
 
 const Cart = () => {
-	const { waifus } = useSelector((state) => state.waifusInCart);
+	const { kuns } = useSelector((state) => state.kunsInCart);
   
 	return (
 	  <div className="cart_page">
 		<h1>Waifus Cart</h1>
-		{waifus.map((item) => (
+		{kuns.map((item) => (
 		  <WaifuCartItem key={item.id} {...item} />
 		))}
 		<h4>
 		  Total amount:{" "}
-		  {waifus.reduce((total, waifu) => total + parseInt(waifu.price), 0)}$
+		  {kuns.reduce((total, waifu) => total + parseInt(waifu.price), 0)} £
 		</h4>
-		<div className="buttons2">
-		  <NavLink className="cart_page_button" to={`/catalog`}>
+		<div className="cart_navigation">
+		  <NavLink className="cart_button_page" to={`/catalog`}>
 			Back To Catalog
 		  </NavLink>
-		  <NavLink className="cart_page_button" to={`/checkout`}>
+		  <NavLink className="cart_button_page" to={`/checkout`}>
 			Continue
 		  </NavLink>
 		</div>

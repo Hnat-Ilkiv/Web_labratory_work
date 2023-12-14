@@ -1,29 +1,26 @@
 import React from "react";
 import "./css/home_hero.css";
-import hero_img from "./images/hero_bank.jfif";
+import hero_img from "./images/hero_image.jpg";
 
 const HomeHero = () => {
 	return (
-		<div className="hero">
-			<img src={hero_img} alt="Hero Img" />
-			<div className="text_div">
-				<div className="text_title">WaifuSelector</div>
-				<div className="page_description">
-					Welcome to "WaifuSelector" – your personal guide to the world of
-					waifus. On our website, you'll discover a wide array of
-					waifu characters who are ready to become your loyal companions and
-					cherished friends. We offer you a vast selection of anime characters,
-					among which you can find the one that resonates with you the most.
-					<br />
-					At "WaifuSelector," you can search for waifus based on various
-					criteria such as appearance, personality, interests, and more. Each
-					character has their unique page with detailed descriptions and images.
-					You can also interact with fellow users, exchanging tips and
-					recommendations on choosing your ideal waifu.
-					<br />
-					Join our community and find your perfect waifu. It's time to embark on
-					a journey into the enchanting world of waifus, all in the English
-					language!
+		<div className="home_hero">
+			<img className="home_hero_image" src={hero_img} alt="Hero Img" />
+			<div className="home_hero_information">
+				<div className="home_hero_title">Dating shop</div>
+				<div className="home_hero_description">
+					<p>
+						Welcome to "Kun Market" – your personal space 
+						for online dates with your favorite anime guys! 
+						In our store, you can choose a personal companion 
+						from the anime world for a unique evening together.
+					</p>
+					<p>
+						It's the perfect gift for fans of Japanese culture 
+						or those looking to add charm to their lives. 
+						Order your online date today and dive into a 
+						fantastic world of emotions and adventures!
+					</p>
 				</div>
 			</div>
 		</div>

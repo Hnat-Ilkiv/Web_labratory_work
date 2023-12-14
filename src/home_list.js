@@ -5,47 +5,42 @@ import HomeShowMoreButton from "./home_show_more_button";
 import getKuns from "./api";
 
 const HomeList = () => {
-	const [items, setItems] = useState([]);
-	const [isViewMore, setIsViewMore] = useState(false);
+	const [kunsList, setKunsList] = useState([]);
+	const [currentPart, setIsViewMore] = useState(1);
 
 	useEffect(() => {
 		getKuns().then((data) => {
-			setItems(data);
+			setKunsList(data);
 		});
 	}, []);
 
 	const toggle = () => {
-		setIsViewMore(!isViewMore);
-		const element = document.getElementsByClassName("bank_list1")[0];
-		if (!isViewMore) {
-			const size = Math.ceil((items.length / 5) * 450) + "px";
-			element.style.height = size;
-		} else {
-			element.style.height = "420px";
+		if ((currentPart + 1) * 4 <= Math.ceil(kunsList.length / 4) * 4) {
+			setIsViewMore(currentPart + 1);
+			const home_list_show = document.getElementsByClassName("home_list_show")[0];
+			const size = ((currentPart + 1) * 400 + 20) + "px";
+			home_list_show.style.height = size;
 		}
 	};
 
 	return (
-		<div className="second_section">
-			<div className="bank_list1">
+		<div className="home_list">
+			<div className="home_list_show">
 			{
-				items.length > 0
-				? (isViewMore
-					? (items.map((item) => HomeCard(item.id, item)))
-					: (items.slice(0, 5).map((item) => HomeCard(item.id, item))))
+				kunsList.length > 0
+				? ((kunsList.slice(0, currentPart * 4).map((kun) => HomeCard(kun.id, kun))))
 				: (
-					<div className="loader">
-						Loading...
+					<div class="loader-container">
+						<div class="loader"></div>
 					</div>
+
 				)
 			}
 			</div>
 
-			<div className="button_div">
+			<div className="home_show_more">
 				{
-					isViewMore
-					? HomeShowMoreButton(toggle, "Hide")
-					: HomeShowMoreButton(toggle, "View more")
+					HomeShowMoreButton(toggle, "View more")
 				}
 			</div>
 		</div>

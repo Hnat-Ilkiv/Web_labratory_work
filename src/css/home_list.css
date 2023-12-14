@@ -1,27 +1,25 @@
-.bank_list1 {
+.home_list {
+    display: flex;
+    flex-direction: column;
+
+    max-width: 1920px;
+    margin: 0px 40px;
+    background-color: #fafafa;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  }
+
+  .home_list_show {
     display: flex;
     justify-content: space-around;
-    padding-top: 50px;
+    /* padding-top: 50px; */
     height: 420px;
     flex-wrap: wrap;
   }
-  
-  .second_section {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .button {
-    width: 200px;
-    height: 60px;
-    background-color: rgb(59, 21, 157);
-    border-radius: 20px;
-    margin-top: 50px;
-    color: #fff;
-    border: grey solid 2px;
-  }
-  
-  .button_div {
+
+  .home_show_more {
     display: flex;
     justify-content: center;
   }
+
+  

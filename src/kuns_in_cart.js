@@ -1,27 +1,25 @@
-// waifusInCartSlice.js
-
 import { createSlice } from "@reduxjs/toolkit";
 
-export const waifusInCartSlice = createSlice({
-  name: "waifusInCart",
+export const kunsInCartSlice = createSlice({
+  name: "kunsInCart",
   initialState: {
-    waifus: [],
+    kuns: [],
     loading: false,
   },
   reducers: {
     addToCart: (state, action) => {
-      state.waifus.push(action.payload);
+      state.kuns.push(action.payload);
     },
 
     removeFromCart: (state, action) => {
-      state.waifus = state.waifus.filter(
-        (waifu) => waifu.id !== action.payload
+      state.kuns = state.kuns.filter(
+        (kun) => kun.id !== action.payload
       );
     },
   },
 });
 
-export const { addToCart, removeFromCart, setWaifusInCart } =
-  waifusInCartSlice.actions;
+export const { addToCart, removeFromCart, setKunsInCart } =
+  kunsInCartSlice.actions;
 
-export default waifusInCartSlice.reducer;
+export default kunsInCartSlice.reducer;

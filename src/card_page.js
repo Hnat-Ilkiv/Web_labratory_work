@@ -9,18 +9,18 @@ import { addToCart, removeFromCart } from "./kuns_in_cart";
 const CardPage = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
-  const { waifus } = useSelector((state) => state.waifusInCart);
-  const [waifu, setWaifu] = useState(null);
+  const { kuns } = useSelector((state) => state.kunsInCart);
+  const [kun, setWaifu] = useState(null);
   const [isInCart, setIsInCart] = useState(false);
 
   useEffect(() => {
     async function fetchWaifu() {
       try {
-        const waifuData = await getKun(id);
-        console.log("waifuData", waifuData);
-        setWaifu(waifuData);
-        const isWaifuInCart = waifus.some(
-          (existingWaifu) => existingWaifu.id === waifuData.id
+        const kunData = await getKun(id);
+        console.log("kunData", kunData);
+        setWaifu(kunData);
+        const isWaifuInCart = kuns.some(
+          (existingWaifu) => existingWaifu.id === kunData.id
         );
         setIsInCart(isWaifuInCart);
       } catch (error) {
@@ -29,15 +29,15 @@ const CardPage = () => {
     }
 
     fetchWaifu();
-  }, [id, waifus]);
+  }, [id, kuns]);
 
   function addWaifuToCart() {
-    dispatch(addToCart(waifu));
+    dispatch(addToCart(kun));
     setIsInCart(true);
   }
 
   function removeWaifuFromCart() {
-    dispatch(removeFromCart(waifu.id));
+    dispatch(removeFromCart(kun.id));
     setIsInCart(false);
   }
 
@@ -51,36 +51,38 @@ const CardPage = () => {
 
   return (
     <div>
-      {waifu ? (
-        <div className="card_item_page">
-          <div className="item_title">
-          {waifu.image && <img
-              className="card_item_image"
-              src={waifu.image}
-              alt={waifu.name}
+      {kun ? (
+        <div className="card_page">
+          {<img
+              className="card_img"
+              src={kun.image}
+              alt={kun.name}
             />}
-            <h1>{waifu.name}</h1>
-          </div>
           <div className="column">
-            <div className="price_age2">
-              <h2>Price: {waifu.price}</h2>
-              <h2>Age: {waifu.age}</h2>
+            <div className="card_description">
+              <div>
+                <h1>{kun.name}</h1>
+                <p>Price: {kun.price}</p>
+                <p>Age: {kun.age}</p>
+              </div>
+              <p className="kun_description">{kun.description}</p>
             </div>
-            <p className="waifu_description">{waifu.description}</p>
             <div className="buttons">
-              <button className="cart_page_button" onClick={handleCartAction}>
+              <button className="card_button" onClick={handleCartAction}>
                 {isInCart
-                  ? `Remove from cart ${waifu.name}`
-                  : `Add to cart ${waifu.name}`}
+                  ? `Remove from cart ${kun.name}`
+                  : `Add to cart ${kun.name}`}
               </button>
-              <NavLink className="cart_page_button" to={`/catalog`}>
+              <NavLink className="card_button" to={`/catalog`}>
                 Back
               </NavLink>
             </div>
           </div>
         </div>
       ) : (
-        <div className="loader">Loading...</div>
+        <div class="loader-container">
+						<div class="loader"></div>
+					</div>
       )}
     </div>
   );
