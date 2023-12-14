@@ -1,0 +1,11 @@
+.search_input {
+    display: flex;
+    width: 200px;
+    height: 35px;
+    border-radius: 20px;
+    font-family: 'Open-Dyslexic', sans-serif;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    text-align: center;
+}   

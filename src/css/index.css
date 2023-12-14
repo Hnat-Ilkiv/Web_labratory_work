@@ -1,0 +1,54 @@
+body {
+    font-family: 'Open-Dyslexic', sans-serif;
+    min-height: 100vh;
+    margin: 0 auto;
+    max-width: 2000px;
+    background: linear-gradient(30deg, #87CEEB, #FFC0CB);
+    background-size: cover;
+    animation: gradientWaves 15s ease-in-out infinite;
+}
+
+div {
+	color: #2d383c;
+}
+
+@keyframes gradientWaves {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+select:hover {
+	cursor: pointer;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+.loader-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+  
+  .loader {
+	border: 12px solid #add8e6;
+	border-top: 12px solid #ffb6c1;
+	border-radius: 50%;
+	width: 80px;
+	height: 80px;
+	animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+  }
+  
