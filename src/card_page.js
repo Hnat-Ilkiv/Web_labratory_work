@@ -62,8 +62,8 @@ const CardPage = () => {
             <div className="card_description">
               <div>
                 <h1>{kun.name}</h1>
-                <p>Price: {kun.price}</p>
-                <p>Age: {kun.age}</p>
+                <p>Age: {kun.age} year old</p>
+                <p>Price: {kun.price} £</p>
               </div>
               <p className="kun_description">{kun.description}</p>
             </div>
