@@ -6,7 +6,6 @@ const port = 5000;
 
 app.use(cors());
 app.use(express.json());
-// https://png.pngtree.com/png-clipart/20230102/original/pngtree-business-man-avatar-png-image_8855195.png
 
 let objectContainer = [
   {

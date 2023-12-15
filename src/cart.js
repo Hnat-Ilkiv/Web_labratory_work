@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
-import WaifuCartItem from "./cart_card";
+import KunCartItem from "./cart_card";
 import "./css/cart.css";
 
 const Cart = () => {
@@ -8,13 +8,13 @@ const Cart = () => {
   
 	return (
 	  <div className="cart_page">
-		<h1>Waifus Cart</h1>
+		<h1>Kuns Cart</h1>
 		{kuns.map((item) => (
-		  <WaifuCartItem key={item.id} {...item} />
+		  <KunCartItem key={item.id} {...item} />
 		))}
 		<h4>
 		  Total amount:{" "}
-		  {kuns.reduce((total, waifu) => total + parseInt(waifu.price), 0)} £
+		  {kuns.reduce((total, kun) => total + parseInt(kun.price), 0)} £
 		</h4>
 		<div className="cart_navigation">
 		  <NavLink className="cart_button_page" to={`/catalog`}>

@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import { removeFromCart } from "./kuns_in_cart";
 import dump from "./images/dump.png"
 
-const WaifuCartItem = (obj) => {
+const KunCartItem = (obj) => {
   const dispatch = useDispatch();
 
   function removeWaifuFromCart() {
@@ -28,4 +28,4 @@ const WaifuCartItem = (obj) => {
   );
 };
 
-export default WaifuCartItem;
+export default KunCartItem;

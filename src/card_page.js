@@ -14,21 +14,21 @@ const CardPage = () => {
   const [isInCart, setIsInCart] = useState(false);
 
   useEffect(() => {
-    async function fetchWaifu() {
+    async function fetchKun() {
       try {
         const kunData = await getKun(id);
         console.log("kunData", kunData);
         setWaifu(kunData);
-        const isWaifuInCart = kuns.some(
-          (existingWaifu) => existingWaifu.id === kunData.id
+        const isKunInCart = kuns.some(
+          (existingKun) => existingKun.id === kunData.id
         );
-        setIsInCart(isWaifuInCart);
+        setIsInCart(isKunInCart);
       } catch (error) {
         console.error("Помилка отримання даних:", error);
       }
     }
 
-    fetchWaifu();
+    fetchKun();
   }, [id, kuns]);
 
   function addWaifuToCart() {
