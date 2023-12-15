@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>CRUD Application</title>
+
+        <!-- Styles CSS -->
+        <link rel="stylesheet" href="./styles.css">
+    </head>
+
+    <body>
+        <header class="header">
+            <h1>My Video</h1>
+            <div class="search_div">
+                <input type="text" name="" class="search_input" id="inputSearchId">
+                <button class="search_button" id="search_button_id" onclick="searchItems()">Search</button>
+            </div>
+        </header>
+
+        <section class="hero">
+            <aside class="manager">
+                <h2>Manager part</h2>
+                <div class="sort_div">
+                    <button class="manager_button" onclick="sortItems()">Sort Video</button>
+                </div>
+                <div class="count_div">
+                    <button class="manager_button" onclick="countItemsSpase()">Count used storage</button>
+                    <div id="countDivResult">
+                        <p>Used storage: 0 MB</p>
+                    </div>
+                </div>
+            </aside>
+            <article class="video_conteiner">
+                <h2>Video list</h2>
+                <ul id="items_container"></ul>
+            </article>
+        </section>
+
+        <script src="./index.js"></script>
+    </body>
+</html>
