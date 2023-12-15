@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>CRUD Application</title>
+
+        <!-- Styles CSS -->
+        <link rel="stylesheet" href="./styles.css">
+    </head>
+
+    <body>
+        <header class="header">
+            <h1 onclick="show_items(items_list)">My Video</h1>
+            <div class="search_div">
+                <input type="text" name="" class="search_input" id="inputSearchId">
+                <button class="search_button" id="search_button_id" onclick="searchItems()">Search</button>
+            </div>
+        </header>
+
+        <section class="hero">
+            <aside class="manager">
+                <h2>Manager part</h2>
+                <div class="create_div">
+                    <button class="manager_button" onclick="document.getElementById('create_modal').style.display='block'"> Create New Video</button>
+                </div>
+                <div class="sort_div">
+                    <button class="manager_button" onclick="sortItems()">Sort Video</button>
+                </div>
+                <div class="count_div">
+                    <button class="manager_button" onclick="countItemsSpase()">Count used storage</button>
+                    <div id="countDivResult">
+                        <p>Used storage: 0 MB</p>
+                    </div>
+                </div>
+            </aside>
+
+            <article class="video_conteiner">
+                <h2>Video list</h2>
+                <ul id="items_container"></ul>
+            </article>
+        </section>
+
+        <div id="create_modal" class="modal" onclick="document.getElementById('create_modal').style.display='none'">
+            <div class="modal-content" onclick="event.stopPropagation()">
+                <span onclick="document.getElementById('create_modal').style.display='none'" style="float:right; cursor:pointer;">&times;</span>
+
+                <form>
+                    <label for="video_name_create_input">Video name:</label><br>
+                    <input type="name" id="video_name_create_input" /><br>
+
+                    <label for="used_spase_mb_create_input">Size in MB:</label><br>
+                    <input type="number" id="used_spase_mb_create_input" /><br>
+
+                    <label for="video_time_s_create_input">Time in S:</label><br>
+                    <input type="number" id="video_time_s_create_input" />
+                </form>
+
+                <button class="manager_button" onclick="createItems()">CREATE</button>
+            </div>
+        </div>
+
+        <div id="edite_modal" class="modal" onclick="document.getElementById('edite_modal').style.display='none'">
+            <div class="modal-content" onclick="event.stopPropagation()">
+                <span onclick="document.getElementById('edite_modal').style.display='none'" style="float:right; cursor:pointer;">&times;</span>
+                <form>
+                    <label for="video_name_edite_input">Video name:</label><br>
+                    <input type="name" id="video_name_edite_input" /><br>
+
+                    <label for="video_name_edite_input">Size in MB:</label><br>
+                    <input type="number" id="used_spase_mb_edite_input" /><br>
+
+                    <label for="video_name_edite_input">Time in S:</label><br>
+                    <input type="number" id="video_time_s_edite_input" />
+                </form>
+                <div id="save_button"></div>
+            </div>
+        </div>
+
+        <script src="./index.js"></script>
+    </body>
+</html>
