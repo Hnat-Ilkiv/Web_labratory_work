@@ -57,6 +57,8 @@ const CatalogList = () => {
           } else {
             setSelectedPriceFilter("All");
             getFilteredByAge(selectedAgeFilter).then((data) => {
+              localStorage.setItem('currentPage', 1);
+              setCurrentPage(1);
               setItems(data);
             });
           }
@@ -66,6 +68,8 @@ const CatalogList = () => {
           } else {
             setSelectedAgeFilter("All");
             getFilteredByPrice(selectedPriceFilter).then((data) => {
+              localStorage.setItem('currentPage', 1);
+              setCurrentPage(1);
               setItems(data);
             });
           }

@@ -37,12 +37,16 @@ const HomeList = () => {
 				)
 			}
 			</div>
-
-			<div className="home_show_more">
-				{
-					HomeShowMoreButton(toggle, "View more")
-				}
-			</div>
+			{
+				(currentPart + 1) * 4 <= Math.ceil(kunsList.length / 4) * 4
+				? (
+				<div className="home_show_more">
+					{
+						HomeShowMoreButton(toggle, "View more")
+					}
+				</div>
+				) : (<div style={{ height: "30px" }} />)
+			}
 		</div>
 	);
 };
