@@ -1,0 +1,25 @@
+.home_list {
+    display: flex;
+    flex-direction: column;
+
+    max-width: 1920px;
+    margin: 0px 40px;
+    background-color: #fafafa;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  }
+
+  .home_list_show {
+    display: flex;
+    justify-content: space-around;
+    /* padding-top: 50px; */
+    height: 420px;
+    flex-wrap: wrap;
+  }
+
+  .home_show_more {
+    display: flex;
+    justify-content: center;
+  }
+
+  

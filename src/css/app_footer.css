@@ -1,0 +1,21 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    height: 170px;
+    max-width: 1920px;
+    margin: 20px 40px;
+    background-color: #fafafa;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.line_div {
+    display: flex;
+    justify-content: center;
+}
+
+.line {
+    height: 2px;
+    width: auto;
+    background-color: green;
+}

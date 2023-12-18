@@ -1,0 +1,17 @@
+.apply_button {
+
+    border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  background: #fafafa;
+  font-family: 'Open-Dyslexic', sans-serif;
+  color: #2d383c;  text-decoration: none;
+  margin: 0 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease;
+  }
+
+  .apply_button:hover {
+    text-decoration: none;
+    background: linear-gradient(150deg, rgba(135, 206, 235, 0.7), rgba(255, 192, 203, 0.7));
+  }
